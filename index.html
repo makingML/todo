@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TODO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>할 일 목록</h1>
+      <button id="themeToggle" class="icon-btn" title="테마 전환" aria-label="테마 전환">🌙</button>
+    </header>
+
+    <form id="todoForm" class="todo-form">
+      <input
+        type="text"
+        id="todoInput"
+        class="todo-input"
+        placeholder="할 일을 입력하세요..."
+        maxlength="200"
+        autocomplete="off"
+      />
+      <select id="todoPriority" class="priority-select" title="우선순위">
+        <option value="low">낮음</option>
+        <option value="medium" selected>보통</option>
+        <option value="high">높음</option>
+      </select>
+      <input type="date" id="todoDue" class="due-input" title="마감일" />
+      <button type="submit" class="add-btn">추가</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters" role="tablist">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="active">진행중</button>
+        <button class="filter-btn" data-filter="completed">완료</button>
+      </div>
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="검색..."
+      />
+    </div>
+
+    <ul id="todoList" class="todo-list"></ul>
+
+    <div id="emptyState" class="empty-state" hidden>
+      <p>표시할 할 일이 없습니다.</p>
+    </div>
+
+    <footer class="app-footer">
+      <span id="itemsLeft">0개 남음</span>
+      <button id="clearCompleted" class="link-btn">완료된 항목 삭제</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
